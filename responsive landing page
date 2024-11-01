@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            transition: background-color 0.3s, color 0.3s;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFD700; /* Gold color */
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 215, 0, 0.2); /* Light gold background on hover */
+            color: white;
+        }
+
+        .scrolled {
+            background: rgba(0, 0, 0, 0.9); /* Darker background on scroll */
+        }
+
+        .content {
+            padding-top: 80px; /* To prevent content from being hidden under the fixed navbar */
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section h1, .section h2 {
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .home {
+            background-image: url('https://plus.unsplash.com/premium_photo-1729017497963-ec4ec3458794?w=1600&auto=format&fit=crop&q=60');
+        }
+
+        .about {
+            background-image: url('https://plus.unsplash.com/premium_photo-1729163182430-e1722e343d31?w=1600&auto=format&fit=crop&q=60');
+        }
+
+        .services {
+            background-image: url('https://images.unsplash.com/photo-1728931710217-8fefd259c1e4?w=1600&auto=format&fit=crop&q=60');
+        }
+
+        .contact {
+            background-image: url('https://images.unsplash.com/photo-1729090854440-97bf4f9f0104?w=1600&auto=format&fit=crop&q=60');
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="home" class="section home">
+            <h1>Welcome to Our Website</h1>
+            <p>Discover amazing content and services.</p>
+        </section>
+        <section id="about" class="section about">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+        </section>
+        <section id="services" class="section services">
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+        </section>
+        <section id="contact" class="section contact">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+        </section>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
